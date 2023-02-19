@@ -28,7 +28,7 @@ def find_mismatch(text):
 
 def main():
     input_type = input()
-    input_type = input_type.replace("\\r\\n", "")
+    input_type = input_type.replace("\\r\\n", "") #getting rid of \r\n
     if input_type == "I":
         input_string = input()
     elif input_type == "F":
