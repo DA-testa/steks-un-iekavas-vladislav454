@@ -11,6 +11,12 @@ def are_matching(left, right):
 def find_mismatch(text):
     opening_brackets_stack = []
     for i, char in enumerate(text):
+        if 'I' in text:
+            text = input()
+        elif 'F' in text:
+            file = "./test/5"
+            with open(file) as f:
+                text = f.read()
         if char in "([{":
             # Process opening bracket
             opening_brackets_stack.append(Bracket(char, i+1))
@@ -21,16 +27,12 @@ def find_mismatch(text):
             top = opening_brackets_stack.pop()
             if not are_matching(top.char, char):
                 return i+1
+            
     if opening_brackets_stack:
         return opening_brackets_stack[0].position
     else:
         return "Success"
-    if 'I' in text:
-        text = input()
-    elif 'F' in text:
-        file = "./test/5"
-        with open(file) as f:
-            text = f.read()
+
 
 
 def main():
