@@ -31,8 +31,6 @@ def main():
     input_type = input()
     if "I" in input_type:
         input_string = input()
-        input_string = input_string.replace("I\\r\\n", "")
-        text = input_string
     elif input_type == "F":
         file_path = input()
         with open(file_path) as f:
