@@ -31,7 +31,6 @@ def main():
     input_type = input_type.replace("\\r\\n", "")
     if input_type == "I":
         input_string = input()
-        text = input_string.replace('\r\n', '')  # Remove Windows newline characters
     elif input_type == "F":
         file_path = input()
         with open(file_path) as f:
