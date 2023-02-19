@@ -13,7 +13,7 @@ def find_mismatch(text):
         if char in "([{":
             # Process opening bracket
             opening_brackets_stack.append(Bracket(char, i+1))
-        elif char in ")]}":
+        if char in ")]}":
             # Process closing bracket
             if not opening_brackets_stack:
                 return i+1
@@ -27,15 +27,15 @@ def find_mismatch(text):
 
 
 def main():
-    text = ""
+    input_string = ""
     input_type = input()
     if "I" in input_type:
         input_string = input()
     elif input_type == "F":
         file_path = input()
         with open(file_path) as f:
-            text = f.read()
-    mismatch = find_mismatch(text)
+            input_string = f.read()
+    mismatch = find_mismatch(input_string)
     print(mismatch)
 
 if __name__ == "__main__":
