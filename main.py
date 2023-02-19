@@ -28,22 +28,14 @@ def find_mismatch(text):
 
 def main():
     input_type = input()
+    input_type = input_type.replace("\\r\\n", "")
     if input_type == "I":
-        text = input()
+        input_string = input()
+        text = input_string.replace('\r\n', '')  # Remove Windows newline characters
     elif input_type == "F":
         file_path = input()
         with open(file_path) as f:
-            text = f.read().strip()
-    mismatch = find_mismatch(text)
-    print(mismatch)
-
-
-if __name__ == "__main__":
-    main()
-
-
-def main():
-    text = input()
+            text = f.read()
     mismatch = find_mismatch(text)
     print(mismatch)
 
