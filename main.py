@@ -1,3 +1,4 @@
+#Vladislavs Sereda 12gr. 221RDB440
 from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
