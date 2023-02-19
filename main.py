@@ -25,6 +25,12 @@ def find_mismatch(text):
         return opening_brackets_stack[0].position
     else:
         return "Success"
+    if 'I' in text:
+        text = input()
+    elif 'F' in text:
+        file = "./test/5"
+        with open(file) as f:
+            text = f.read()
 
 
 def main():
