@@ -27,17 +27,18 @@ def find_mismatch(text):
 
 
 def main():
+    text = ""
     input_type = input()
-    input_type = input_type.replace("\\r\\n", "") #getting rid of \r\n
-    if input_type == "I":
+    if "I" in input_type:
         input_string = input()
+        input_string = input_string.replace("I\\r\\n", "")
+        text = input_string
     elif input_type == "F":
         file_path = input()
         with open(file_path) as f:
             text = f.read()
     mismatch = find_mismatch(text)
     print(mismatch)
-
 
 if __name__ == "__main__":
     main()
